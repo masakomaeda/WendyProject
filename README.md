@@ -29,3 +29,9 @@ https://www.pc-koubou.jp/magazine/19743
 sudo apt-get install alsa-utils sox libsox-fmt-all  -y
 
 cd juius/diction-kit
+
+
+
+
+標準入出力について
+ass1_bestは、中間認識結果で、最終的な結果としてはsentence1に表示
