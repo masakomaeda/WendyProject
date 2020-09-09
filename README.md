@@ -3,7 +3,7 @@
 
 
  - サーバーの動かし方
- 
+ 　 julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo
    % julius -C fast.jconf -module
 
 
@@ -21,7 +21,7 @@ sudo apt-get install git-lfs
 git lfs clone https://github.com/julius-speech/dictation-kit.git
 
 
-usbマイクのセッティング
+-usbマイクのセッティング
 
 https://www.pc-koubou.jp/magazine/19743
 
@@ -32,18 +32,17 @@ cd juius/diction-kit
 
 
 
-以下でPython 3用のpipをインストールできた。
+-以下でPython 3用のpipをインストールできた。
 
 $ sudo apt-get install python3-pip
 
 
 
-標準入出力について
+-標準入出力について
 
 ass1_bestは、中間認識結果で、最終的な結果としてはsentence1に表示
 
 <<< please speak >>>をまつ
 
 
-標準入出力について
 pexpectをpip
