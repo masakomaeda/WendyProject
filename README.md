@@ -21,7 +21,7 @@ sudo apt-get install git-lfs
 git lfs clone https://github.com/julius-speech/dictation-kit.git
 
 
--usbマイクのセッティング
+ - usbマイクのセッティング
 
 https://www.pc-koubou.jp/magazine/19743
 
@@ -32,13 +32,13 @@ cd juius/diction-kit
 
 
 
--以下でPython 3用のpipをインストールできた。
+ - 以下でPython 3用のpipをインストールできた。
 
 $ sudo apt-get install python3-pip
 
 
 
--標準入出力について
+ - 標準入出力について
 
 ass1_bestは、中間認識結果で、最終的な結果としてはsentence1に表示
 
