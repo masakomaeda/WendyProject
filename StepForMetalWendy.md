@@ -26,7 +26,7 @@
         |:-|:-|
         |P2 SSH|enabled|
 
-以上でFinish、再起動（Would you like to reboot now? ⇒「Yes」）  
+    以上でFinish、再起動（Would you like to reboot now? ⇒「Yes」）  
 
 
 - ソフトウェアのアップデート  
