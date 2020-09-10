@@ -57,3 +57,5 @@
   
   
 ### <Step.2>　USBマイクの準備
+
+https://www.pc-koubou.jp/magazine/19743
