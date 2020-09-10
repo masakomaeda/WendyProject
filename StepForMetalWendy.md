@@ -8,7 +8,7 @@
     
 - 初期設定を行う  
     ```
-    % sudo raspi-config
+    $ sudo raspi-config
     ```
     
     - 4 Localisation Options
@@ -27,9 +27,26 @@
         |P2 SSH|enabled|
 
 以上でFinish、再起動（Would you like to reboot now? ⇒「Yes」）  
-  
+
+
 - ソフトウェアのアップデート  
     ```
-    % sudo apt update
-    % sudo apt upgrade
+    $ sudo apt update
+    $ sudo apt upgrade
     ```
+
+- ネットワークの設定
+    ```
+    $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+    ```
+    
+    ```
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    country=JP
+    network={
+    ssid="ssid"
+    psk="password"
+    }
+    ```
+    
