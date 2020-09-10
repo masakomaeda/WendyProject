@@ -14,7 +14,7 @@
     
 - ネットワークの設定を行う  
     % sudo nano /etc/wpa_supplicant/wpa_supplicant.conf  
-    
+     ```   
     ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev  
     update_config=1  
     country=JP  
@@ -22,3 +22,8 @@
     ssid="ssid"  
     psk="password"  
     }
+    ```
+
+- ソフトウェアのアップデート  
+    % sudo apt update
+    % sudo apt upgrade
