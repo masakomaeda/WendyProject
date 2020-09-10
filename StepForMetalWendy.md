@@ -19,6 +19,18 @@ Configuring keyboard-configurationでは、「 The default for the keyboard layo
 「5 Interfaces Option」⇒「P2 SSH」を有効（enabled）  
 ここまで終わったらFinishとして、  
 Would you like to reboot now? で「Yes」で再起動  
+- 4 Localisation Options  
+|第二メニュー|選択肢|
+|:-|:-|
+|I1 Change Locale|ja_JP.UTF-8 UTF-8 (Configuring locals ⇒ C.UTF-8)|
+|I2 Change Timezone|Asia ⇒ Tokyo|
+|I3 Change Keyboard Layout|Generic 105-key (Intl) PC ⇒ キーボード通り （Configuring keyboard-configrationではNo compose key)|
+|I4 Change Wi-fi Country|JP Japan|
+
+- 5 Interfaces Option  
+|第二メニュー|選択肢|
+|:-|:-|
+|P2 SSH|enabled|
 
 - ソフトウェアのアップデート  
     ```
