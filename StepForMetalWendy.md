@@ -35,7 +35,7 @@
     $ sudo apt upgrade
     ```
 
-- ネットワークの設定
+- ネットワーク(Wi-fi)の設定
     ```
     $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
     ```
@@ -49,4 +49,10 @@
     psk="password"
     }
     ```
-    
+----
+以下、Dockerを使用する場合はここでコンテナの準備を行い、Doker内に構築を行う？  
+マイクやオーディオ設定は外側にも必要？？未検証  
+----
+  
+  
+### <Step.2>　USBマイクの準備
