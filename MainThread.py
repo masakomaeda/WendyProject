@@ -19,6 +19,10 @@ while True:
     #  if '<<< please speak >>>' in output:
   if 'おはよう' in output:
     print("sleepy")
+  elif 'まさお' in output:
+    print("happy")
+  elif 'きつね' in output:
+    print("happy")
   elif 'さようなら' in output:
     break
 #    else:
