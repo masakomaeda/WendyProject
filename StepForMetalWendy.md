@@ -137,4 +137,7 @@ $ julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.j
     $ sudo apt install python3-pip -y
     $ python3 -m pip install pexpect
     ```
+    
+    キツネの領域
+    sudo apt install python3-gpiozero wiringpi pigpio uvicorn -y
 
