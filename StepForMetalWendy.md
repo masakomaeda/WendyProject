@@ -140,8 +140,8 @@ Gitがないときはインストールしておく
 ### <Step.5>　起動チェック
 
 ```
-$ cd ~/Downloads/julius/dictation-kit/
-$ julius -C fast.jconf -module
+$ cd ~/julius/dictation-kit/
+$ julius -C main.jconf -C am-gmm.jconf -demo
 ```
 
 # TODO 以下は編集途中
