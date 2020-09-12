@@ -101,21 +101,7 @@ Gitがないときはインストールしておく
 
 - マイクをぶっさす
 
-- マイク優先順位の確認。snd_usb_audioが0番にきているか。
-    ```
-    $ cat /proc/asound/modules
-    ```
-    - 0番でなかったら
-        ```
-        $sudo vi /etc/modprobe.d/alsa-base.conf
 
-
-        # 下記を参考に修正を加え、0番にする
-        options snd slots=snd_usb_audio,snd_bcm2835
-        options snd_usb_audio index=0
-        options snd_bcm2835 index=1
-        ```
-       リブート後、設定の反映を確認  
 
 - マイクの感度を上げる(56は入力の感度。0～62の範囲で56=90%。上げすぎると音割れする。)  
   -cの後の0はカード番号。arecord -lで調べられる（後述）
@@ -136,7 +122,7 @@ Gitがないときはインストールしておく
         # 0,0の最初の0はカードNO、最後の0はデバイスNO
         export ALSADEV="plughw:0,0"
         ```
-
+再起動！！！
 ### <Step.5>　起動チェック
 
 ```
