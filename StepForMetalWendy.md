@@ -107,7 +107,7 @@ Gitがないときはインストールしておく
     ```
     - 0番でなかったら
         ```
-        $sudo vim /etc/modprobe.d/alsa-base.conf
+        $sudo vi /etc/modprobe.d/alsa-base.conf
 
 
         # 下記を参考に修正を加え、0番にする
@@ -131,7 +131,7 @@ Gitがないときはインストールしておく
         ```
     - 環境変数を保存する
         ```
-        $ sudo nano /etc/profile
+        $ sudo vi /etc/profile
 
         # 0,0の最初の0はカードNO、最後の0はデバイスNO
         export ALSADEV="plughw:0,0"
