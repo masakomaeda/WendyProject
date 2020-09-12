@@ -80,9 +80,9 @@
     $ sudo apt install git-lfs -y
     ```
 
-- 本体
+- 本体（ホームでいいけ？）
     ```
-    $ cd ~/Downloads/ 
+    $ cd ~/ 
     $ mkdir julius/
     $ cd julius 
     $ git lfs clone https://github.com/julius-speech/dictation-kit.git
@@ -148,4 +148,4 @@ $ julius -C fast.jconf -module
 sudo apt-get install python3-pip  
 pexpectをpip。py3用のやつで  
 精度がいいのはこっち  
-julius -C ~/Downloads/julius/dictation-kit/main.jconf -C ~/Downloads/julius/dictation-kit/am-dnn.jconf -dnnconf ~/Downloads/julius/dictation-kit/julius.dnnconf -demo
+julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo
