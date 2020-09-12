@@ -67,11 +67,11 @@ Gitがないときはインストールしておく
     ```
     $ cd /usr/local/src/
     $ sudo apt install build-essential zlib1g-dev libsdl2-dev libasound2-dev -y
-    $ git clone https://github.com/julius-speech/julius.git
+    $ sudo git clone https://github.com/julius-speech/julius.git
     $ cd julius
-    $ ./configure --enable-words-int --with-mictype=alsa
-    $ make -j4
-    $ make install
+    $ sudo ./configure --enable-words-int --with-mictype=alsa
+    $ sudo make -j4
+    $ sudo make install
     ```
   
 
