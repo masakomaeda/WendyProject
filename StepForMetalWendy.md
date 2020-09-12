@@ -101,16 +101,14 @@ Gitがないときはインストールしておく
 
 - マイクをぶっさす
 
-
-
 - マイクの感度を上げる(56は入力の感度。0～62の範囲で56=90%。上げすぎると音割れする。)  
-  -cの後の0はカード番号。arecord -lで調べられる（後述）
+  -cの後の0はカード番号。```$ arecord -l```で調べられる（後述）
     ```
     $ amixer sset Mic 50 -c 0
     ```
 
-- juliusが参照する環境変数「AUDIODEV」を使ってjuliusが利用するサウンドカードを指定する  
-  起動する度に設定しなくて済むよう「/etc/profile」ファイルに追加する
+- juliusが利用するサウンドカードを、juliusが参照する環境変数「AUDIODEV」に指定する
+  （起動する度に設定しなくて済むよう「/etc/profile」ファイルに追加する）
     - まずは入力のカードNO,デバイスNOを調べる
         ```
         $ arecord -l
@@ -122,12 +120,13 @@ Gitがないときはインストールしておく
         # 0,0の最初の0はカードNO、最後の0はデバイスNO
         export ALSADEV="plughw:0,0"
         ```
-再起動！！！
+    再起動！！！  
+    
 ### <Step.5>　起動チェック
-
 ```
-$ cd ~/julius/dictation-kit/
-$ julius -C main.jconf -C am-gmm.jconf -demo
+$ julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.jconf -demo
+# 精度がいいのはこちら↓ でも遅い
+# julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo
 ```
 
 # TODO 以下は編集途中
@@ -137,3 +136,4 @@ sudo apt-get install python3-pip
 pexpectをpip。py3用のやつで  
 精度がいいのはこっち  
 julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo
+
