@@ -131,9 +131,10 @@ $ julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.j
 
 # TODO 以下は編集途中
 
-### <Step.6>　アプリインストール
-sudo apt-get install python3-pip  
-pexpectをpip。py3用のやつで  
-精度がいいのはこっち  
-julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo
+### <Step.6>　アプリ実行の準備
+- pexpectをpip(py3用のやつで）インストールする
+    ```
+    $ sudo apt install python3-pip -y
+    $ python3 -m pip install pexpect
+    ```
 
