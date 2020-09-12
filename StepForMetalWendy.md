@@ -35,9 +35,9 @@
     $ sudo apt upgrade
     ```
 
-- ネットワーク(Wi-fi)の設定
+- ネットワーク(Wi-fi)の設定 　バックアップ取ってからだぞ！
     ```
-    $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+    $ sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
     ```
     
     ```
