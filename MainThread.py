@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 import pexpect
+import request
 
 p = pexpect.spawn("/bin/bash")
 p.sendline("julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.jconf -demo")
 #p.sendline("julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo")
 
 print("hello")
+print("please speak something...")
 
 output = ""
 cnt = 0
@@ -19,10 +21,26 @@ while True:
     #  if '<<< please speak >>>' in output:
   if 'おはよう' in output:
     print("sleepy")
+    url = 'http://192.168.10.108/io-api/templates/wings/action/sleepy'
+    response = requests.get(url)
   elif 'まさお' in output:
-    print("happy")
+    print("delight")
+
+    url = 'http://192.168.10.108/io-api/templates/wings/action/delight/0'
+    response = requests.get(url)
   elif 'きつね' in output:
-    print("happy")
+    print("delight")
+
+    url = 'http://192.168.10.108/io-api/templates/wings/action/delight/0'
+    response = requests.get(url)
+
+  elif 'みぎ' in output:
+    print("right")
+  elif 'ひだり' in output:
+    print("left")
+  elif 'とまれ' in output:
+    print("stop")
+    
   elif 'さようなら' in output:
     break
 #    else:
@@ -34,6 +52,6 @@ while True:
 #  if cnt == 33:
 #    print(output)
 
-print("終了")
+print("by!")
 p.terminate()
 p.expect(pexpect.EOF)
