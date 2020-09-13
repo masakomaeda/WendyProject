@@ -138,6 +138,6 @@ $ julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.j
     $ python3 -m pip install pexpect
     ```
     
-    キツネの領域
-    sudo apt install python3-gpiozero wiringpi pigpio uvicorn -y
-
+    キツネの領域  
+    sudo apt install python3-gpiozero wiringpi  -y  
+    python3 -m pip insatall fastapi uvicorn aiofiles pigpio Jinja2  
