@@ -15,7 +15,7 @@
 
         |第二メニュー|選択肢|
         |:-|:-|
-        |I1 Change Locale|ja_JP.UTF-8 UTF-8 (Configuring locals ⇒ C.UTF-8)|
+        |I1 Change Locale|ja_JP.UTF-8 UTF-8 (Configuring locals ⇒ ~~C.UTF-8~~ ja_JP.UTF-8 日本語UTF-8)|
         |I2 Change Timezone|Asia ⇒ Tokyo|
         |I3 Change Keyboard Layout|Generic 105-key (Intl) PC ⇒ キーボード通り （Configuring keyboard-configrationではNo compose key)|
         |I4 Change Wi-fi Country|JP Japan|
