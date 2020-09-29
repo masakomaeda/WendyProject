@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 import pexpect
 import request
+import os
+
+homeAddr = os.environ['HOME']
 
 p = pexpect.spawn("/bin/bash")
-p.sendline("julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.jconf -demo")
+p.sendline(f"julius -C {homeAddr}/metal-wendy/julius/dictation-kit/main.jconf -C {homeAddr}/metal-wendy/julius/dictation-kit/am-gmm.jconf -demo")
 #p.sendline("julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo")
 
 print("hello")
