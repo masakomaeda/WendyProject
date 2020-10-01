@@ -3,8 +3,12 @@ import pexpect
 import requests
 import os
 
-homeAddr = os.environ['HOME']
+#起動した証拠に一回歓喜する
+print("delight")
+url = 'http://localhost:8000/wings/action/delight/0'
+response = requests.get(url)  
 
+homeAddr = os.environ['HOME']
 p = pexpect.spawn("/bin/bash")
 p.sendline(f"julius -C {homeAddr}/WendyProject/wendydict/wendystart.conf -demo")
 #p.sendline("julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo")
@@ -22,8 +26,6 @@ while True:
   url = ''
   if 'おはよう' in output:
     print("sleepy->")
-    print(output)
-    print("sleepy<-")
     url = 'http://localhost:8000/wings/action/sleepy'
   elif 'まさお' in output:
     print("delight")
@@ -43,7 +45,7 @@ while True:
   elif 'とまれ' in output:
     print("stop")  
     url = 'http://localhost:8000/run/stop'
-  elif 'さようなら' in output:
+  elif 'さよなら' in output:
     print("by!")
     break
   else:

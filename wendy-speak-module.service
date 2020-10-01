@@ -4,7 +4,7 @@ After=wendy-io-api.sevice
 
 [Service]
 WorkingDirectory=/home/pi/WendyProject
-ExecStart=/home/pi/WendyProject/speak.py
+ExecStart=/home/pi/WendyProject/wakeup.py
 Restart=always
 Type=simple
 User=pi
