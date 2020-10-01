@@ -1,0 +1,13 @@
+[Unit]
+Description=voice recognition system for WENDY
+After=wendy-io-api.sevice
+
+[Service]
+WorkingDirectory=/home/pi/WendyProject
+ExecStart=/home/pi/WendyProject/speak.py
+Restart=always
+Type=simple
+User=pi
+
+[Install]
+WantedBy=multi-user.target
