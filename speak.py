@@ -1,59 +1,82 @@
 #!/usr/bin/env python3
+
 import pexpect
 import requests
 import os
+import socket
 
-#起動した証拠に一回歓喜する
-print("delight")
-url = 'http://localhost:8000/wings/action/delight/0'
-response = requests.get(url)  
+def startverb(client):
+  print("welcome")
+  url = "http://localhost:8000/wings/action/delight"
+  reponse = requests.get(url)
+  datasize = 1024
 
-homeAddr = os.environ['HOME']
-p = pexpect.spawn("/bin/bash")
-p.sendline(f"julius -C {homeAddr}/WendyProject/wendydict/wendystart.conf -demo")
-#p.sendline("julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo")
+  # Juliusにソケット通信で接続
+  #client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+  #client.connect((host, port))
 
-print("hello")
-print("please speak something...")
+  try:
+    data = ""
 
-output = ""
-cnt = 0
-while True:
-  p.expect("<<< please speak >>>", timeout=120)
+    while True:
+      data += str(client.recv(datasize).decode('utf-8'))
+    
+      if '</RECOGOUT>\n.' in data:
+        # 出力結果から認識した単語を取り出す
+        output = ""
+        for line in data.split('\n'):
+          index = line.find('WORD="')
+          if index != -1:
+            output = output + line[index + 6:line.find('"', index + 6)]
+        
+        print(output)
+        if "さよなら" in output:
+          print("by")
+          url = 'http://localhost:8000/wings/action/sleepy'
+          response = requests.get(url)
+          break
+        elif "おはよう" in output:
+          print("sleepy")
+          url = 'http://localhost:8000/wings/action/sleepy'
+        elif "まさお" in output:
+          print("I love MASAO!")
+          url = "http://localhost:8000/wings/action/delight"
+        elif "きつね" in output:
+          print("uhh... KITUNE!")
+          url = "http://localhost:8000/wings/action/delight"
+        elif "みぎ" in output:
+          print("turn right")
+          url = "http://localhost:8000/run/right"
+        elif "ひだり" in output:
+          print("turn left")
+          url = "http://localhost:8000/run/left"
+        elif "すすめ" in output:
+          print("go straight")
+          url = "http://localhost:8000/run/go"
+        elif "とまれ" in output:
+          print("stop please")
+          url = "http://localhost:8000/run/stop"
+        else:
+          url = ""
+          pass
 
-  output = str(p.before.decode())
-  print(output)
-  url = ''
-  if 'おはよう' in output:
-    print("sleepy->")
-    url = 'http://localhost:8000/wings/action/sleepy'
-  elif 'まさお' in output:
-    print("delight")
-    url = 'http://localhost:8000/wings/action/delight/0'
-  elif 'きつね' in output:
-    print("delight")
-    url = 'http://localhost:8000/wings/action/delight/0'
-  elif 'すすめ' in output:
-    print("go")
-    url = 'http://localhost:8000/run/go'
-  elif 'みぎ' in output:
-    print("right")
-    url = 'http://localhost:8000/run/right'
-  elif 'ひだり' in output:
-    print("left")
-    url = 'http://localhost:8000/run/left'
-  elif 'とまれ' in output:
-    print("stop")  
-    url = 'http://localhost:8000/run/stop'
-  elif 'さよなら' in output:
-    print("by!")
-    break
-  else:
-    url = ''
-    pass
+        if "http://" in url:
+          response = requests.get(url)
 
-  if 'http://' in url:
-    response = requests.get(url)  
+        url = ""    
+        data = ""  
+      else:
+        pass
 
-p.terminate()  
-p.expect(pexpect.EOF)
+        
+  except KeyboardInterrupt:
+    print('finished')
+
+if __name__ == "__main__":
+  host = 'localhost' 
+  port = 10500
+
+  client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+  client.connect((host, port))
+  startverb(client)
+

@@ -1,0 +1,13 @@
+[Unit]
+Description=voice recognition system for WENDY
+After=wendy-io-api.sevice
+
+[Service]
+WorkingDirectory=/home/pi/WendyProject
+ExecStart=/usr/local/bin/julius -C wendydict/wendystart.conf -module 
+Restart=always
+Type=simple
+User=pi
+
+[Install]
+WantedBy=multi-user.target
