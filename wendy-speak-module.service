@@ -1,6 +1,6 @@
 [Unit]
 Description=voice recognition system for WENDY
-After=wendy-io-api.sevice
+After=julius-for-wendy.sevice
 
 [Service]
 WorkingDirectory=/home/pi/WendyProject

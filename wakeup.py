@@ -42,7 +42,8 @@ try:
       elif 'おやすみ' in output:
         print('see you again!')
 #        client.close()
-        break
+#        break
+#        シャットダウンさせたい
       else:
         pass
       

@@ -1,10 +1,10 @@
 [Unit]
-Description=voice recognition system for WENDY
+Description=start julius by module mode.
 After=wendy-io-api.sevice
 
 [Service]
 WorkingDirectory=/home/pi/WendyProject
-ExecStart=/usr/local/bin/julius -C wendydict/wendystart.conf -module 
+ExecStart=/home/pi/WendyProject/juliusstart.sh
 Restart=always
 Type=simple
 User=pi
