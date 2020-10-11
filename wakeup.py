@@ -41,9 +41,8 @@ try:
         speak.startverb(client)
       elif 'おやすみ' in output:
         print('see you again!')
-#        client.close()
-#        break
-#        シャットダウンさせたい
+        os.system("sudo shutdown -h now")
+
       else:
         pass
       
