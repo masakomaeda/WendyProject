@@ -1,6 +1,11 @@
 # WendyProject
 小さいウエンディを動かそう
 
+ - 辞書作り方
+ ```
+sudo mkdfa.py /home/pi/WendyProject/wendydict/wendy
+```
+
 
 StepForMetalWendy.md  
   ┃   
