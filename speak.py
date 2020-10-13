@@ -53,6 +53,9 @@ def startverb(client):
         elif "すすめ" in output:
           print("go straight")
           url = "http://localhost:8000/run/go"
+        elif "さがれ" in output:
+          print("go back")
+          url = "http://localhost:8000/run/back"
         elif "とまれ" in output:
           print("stop please")
           url = "http://localhost:8000/run/stop"
