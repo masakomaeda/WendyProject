@@ -130,7 +130,7 @@ $ julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.j
     $ python3 -m pip install pexpect requests
     ```
 
-### <Step.6>　自動起動のためサービスに登録
+### <Step.7>　自動起動のためサービスに登録
  - julius-for-wendy.service・・・juliusstart.shを実行し、ユリウスをモジュールモードで起動する
  - wendy-speak-module.service・・・wakeup.pyを起動し、wendy目覚めさせるための準備をする
     ```
@@ -145,5 +145,5 @@ $ julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.j
   
   -----
   
-  以上で再起動することにより、wendyはあなたの声を聞き取ります。
+  以上で再起動することにより、wendyはあなたの声を聞き取ります。  
   Good luck!!
