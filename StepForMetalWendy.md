@@ -129,5 +129,21 @@ $ julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.j
     $ sudo apt-get install python3-pip -y
     $ python3 -m pip install pexpect requests
     ```
+
+### <Step.6>　自動起動のためサービスに登録
+ - julius-for-wendy.service・・・juliusstart.shを実行し、ユリウスをモジュールモードで起動する
+ - wendy-speak-module.service・・・wakeup.pyを起動し、wendy目覚めさせるための準備をする
+    ```
+    sudo cp -p ~/WendyProject/julius-for-wendy.service /etc/systemd/system
+    sudo cp -p~/WendyProject/ wendy-speak-module.service /etc/systemd/system
+    sudo systemctl daemon-reload
+    sudo systemctl start julius-for-wendy.service
+    sudo systemctl start wendy-speak-module.service
+    sudo systemctl enable julius-for-wendy.service
+    sudo systemctl enable wendy-speak-module.service
+    ```
   
+  -----
   
+  以上で再起動することにより、wendyはあなたの声を聞き取ります。
+  Good luck!!
