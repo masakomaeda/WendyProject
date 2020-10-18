@@ -31,8 +31,8 @@
 
 - ソフトウェアのアップデート  
     ```
-    $ sudo apt update
-    $ sudo apt upgrade
+    $ sudo apt-get update
+    $ sudo apt-get upgrade
     ```
 
 - ネットワーク(Wi-fi)の設定 　バックアップ取ってからだぞ！
@@ -49,24 +49,24 @@
     psk="password"
     }
     ```
-----
-以下、Dockerを使用する場合はここでコンテナの準備を行い、Doker内に構築を行う？  
-マイクやオーディオ設定は外側にも必要？？未検証  
-Gitがないときはインストールしておく  
-```$ sudo apt-get install git-all -y```
+    
+ - Gitがないときはインストールしておく  
+    ```
+    $ sudo apt-get install git-all -y
+    ```
 
 ----
 ### <Step.2>　Juliusのインストール
 - オーディオ関係のライブラリーをインストールしておく  
 （無くてもJuliusuは入れられるのだが入れた方がいい [公式サイト](http://julius.osdn.jp/juliusbook/ja/desc_install.html) ものと、マイク設定にも使うもの）
     ```
-    $ sudo apt install alsa-utils sox libsox-fmt-all -y
+    $ sudo apt-get install alsa-utils sox libsox-fmt-all -y
     ```
 
 - 本体（Gitの[Readme](https://github.com/julius-speech/julius)より）  
     ```
     $ cd /usr/local/src/
-    $ sudo apt install build-essential zlib1g-dev libsdl2-dev libasound2-dev -y
+    $ sudo apt-get install build-essential zlib1g-dev libsdl2-dev libasound2-dev -y
     $ sudo git clone https://github.com/julius-speech/julius.git
     $ cd julius
     $ sudo ./configure --enable-words-int --with-mictype=alsa
@@ -79,7 +79,7 @@ Gitがないときはインストールしておく
 
 - まずは大きいファイルをGIT HUBからゲットするためのツールをインストール  
     ```
-    $ sudo apt install git-lfs -y
+    $ sudo apt-get install git-lfs -y
     ```
 
 - 本体（ホームでいいけ？）
@@ -90,12 +90,6 @@ Gitがないときはインストールしておく
     $ git lfs clone https://github.com/julius-speech/dictation-kit.git
     ```
 
-
-----
-以上、Dockerを使用する場合はここまでコンテナの準備を行い、Doker内に構築を行う？  
-ここからはマイクの設定、手動で行う
-
-----
 
 ### <Step.4>　USBマイクの準備
 
@@ -129,15 +123,11 @@ $ julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-gmm.j
 # julius -C ~/julius/dictation-kit/main.jconf -C ~/julius/dictation-kit/am-dnn.jconf -dnnconf ~/julius/dictation-kit/julius.dnnconf -demo
 ```
 
-# TODO 以下は編集途中
-
 ### <Step.6>　アプリ実行の準備
-- pexpectをpip(py3用のやつで）インストールする
+- pexpectとrequestsをpipでインストールする
     ```
-    $ sudo apt install python3-pip -y
-    $ python3 -m pip install pexpect
+    $ sudo apt-get install python3-pip -y
+    $ python3 -m pip install pexpect requests
     ```
-    
-    キツネの領域  
-    sudo apt install python3-gpiozero wiringpi  -y  
-    python3 -m pip insatall fastapi uvicorn aiofiles pigpio Jinja2  
+  
+  
