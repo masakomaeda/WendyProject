@@ -17,7 +17,23 @@
  - ひだり (left)
  - みぎ (right)
  - すすめ (go)
+ - さがれ(back)
  - おはよう (sleepy)
  - こんにちは (sleepy)
  - こんばんは (sleepy)
  - さようなら (sleepy)
+
+
+## 辞書の作り方＜開発用メモ＞  
+@@@はすべて同じ名称で統一し、同じ場所に保存する。
+ - @@@.yomiを作成後以下を実行すると@@@.phoneファイルが作成され、発音用ローマ字一覧をゲットできる。
+   この一覧が不要ならば、これらのファイルおよび以下の実行は不要である。
+   ```
+    /usr/local/src/julius/gramtools/yomi2voca/yomi2voca.pl /home/pi/WendyProject/wendydict/@@@.yomi > /home/pi/WendyProject/wendydict/@@@.phone
+    ```
+    
+ - 辞書を作るには@@@.vocaおよび@@@.grammarの2ファイルが必要である。
+ 下記を実行することで辞書ファイルが生成される。
+ ```
+ sudo /usr/local/src/julius/gramtools/mkdfa/mkdfa.py /home/pi/WendyProject/wendydict/@@@
+ ```
